@@ -4,9 +4,12 @@
 # or operating system, you probably want to add a global ignore instead:
 #   git config --global core.excludesfile '~/.gitignore_global'
 
-# Ignore bundler config.
+# Ignore bundler config. - use "rake bower:install" to fill the directory
 /.bundle
-/bower_components
+/vendor/assets/bower_components
+
+# use install instead
+/node_modules
 
 # ignore Visual Studio project files
 *.sln
