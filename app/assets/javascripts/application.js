@@ -18,4 +18,5 @@
 //= require angular-rails-templates
 //= require d3/d3
 //= require utilities
+//= require app.js
 //= require_tree .

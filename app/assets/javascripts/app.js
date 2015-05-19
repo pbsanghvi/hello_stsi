@@ -1,27 +1,26 @@
-var hello = angular.module('hello', [
-    'templates', 'ngRoute', 'ngResource', 'controllers', 'directives', 'angular-flash.service',
+var app = angular.module('hello', [
+    'templates', 'ngRoute', 'ngResource', 'directives', 'angular-flash.service',
     'angular-flash.flash-alert-directive', 'ui.bootstrap'
 ]);
 
-hello.config([
+app.config([
 '$routeProvider', 'flashProvider', function ($routeProvider, flashProvider) {
     flashProvider.errorClassnames.push("alert-danger");
     flashProvider.warnClassnames.push("alert-warning");
     flashProvider.infoClassnames.push("alert-info");
     flashProvider.successClassnames.push("alert-success");
     return $routeProvider.when('/', {
-        templateUrl: "Home.html",
+        templateUrl: "Home/Home.html",
         controller: 'HomeController'
     })
 }
 ]);
 
-var controllers = angular.module('controllers', []);
 var directives  = angular.module('directives', []);
 
 // Other packages = 'geochart', 'table', 'treemap', 'wordtree'
 
-hello.factory('ChartInitializer', function ($rootScope, $window, $q) {
+app.factory('ChartInitializer', function ($rootScope, $window, $q) {
     var deferred = $q.defer();
 
     $window.google.load('visualization', '1',
@@ -40,7 +39,7 @@ hello.factory('ChartInitializer', function ($rootScope, $window, $q) {
     };
 });
 
-hello.factory('TimelineInitializer', function ($rootScope, $window, $q) {
+app.factory('TimelineInitializer', function ($rootScope, $window, $q) {
     var deferred = $q.defer();
 
     $window.google.load('visualization', '1',
@@ -59,7 +58,7 @@ hello.factory('TimelineInitializer', function ($rootScope, $window, $q) {
     };
 });
 
-hello.factory('MapInitializer', function ($rootScope, $window, $q) {
+app.factory('MapInitializer', function ($rootScope, $window, $q) {
     //Google's url for async maps initialization accepting callback function
     var asyncUrl = 'https://maps.googleapis.com/maps/api/js?callback=',
         deferred = $q.defer();
