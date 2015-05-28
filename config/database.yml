@@ -20,7 +20,7 @@ default: &default
   # For details on connection pooling, see rails configuration guide
   # http://guides.rubyonrails.org/configuring.html#database-pooling
   pool: 5
-  password: <%= ENV['TASKINATOR_DATABASE_PASSWORD'] %>
+  password: <%= ENV['HELLO_DATABASE_PASSWORD'] %>
 
 development:
   <<: *default
@@ -83,7 +83,7 @@ production:
   <<: *default
   database: hello_production
   username: hello
-  password: <%= ENV['TASKINATOR_DATABASE_PASSWORD'] %>
+  password: <%= ENV['HELLO_DATABASE_PASSWORD'] %>
 
 cucumber:
   <<: *test
