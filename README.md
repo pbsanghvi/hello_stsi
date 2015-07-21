@@ -28,3 +28,6 @@ Some useful libraries that aren't necessarily in the hello project include...
 
 [morris](http://morrisjs.github.io/morris.js/) - 'easy'
 
+### Fonts
+
+[Beautiful web type](http://hellohappy.org/beautiful-web-type/) gallery of free google fonts
